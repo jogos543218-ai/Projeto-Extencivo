@@ -1,0 +1,205 @@
+  /* Estilos Básicos */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container-aula {
+            display: flex;
+            max-width: 1400px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            min-height: 80vh;
+        }
+
+        /* Área Principal do Vídeo e Conteúdo */
+        .conteudo-principal {
+            flex-grow: 1;
+            padding: 30px;
+        }
+
+        .video-player {
+            width: 100%;
+            aspect-ratio: 16 / 9; /* Garante que o player mantenha a proporção */
+            margin-bottom: 25px;
+        }
+
+        .video-player iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Estilos do Título e Parágrafo da Aula Atual */
+        #titulo-aula-atual {
+            font-size: 2em;
+            color: #3b82f6; /* Cor Alura-style */
+            margin-top: 0;
+        }
+        
+        #paragrafo-aula-atual {
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        /* ------------------------------------------- */
+        /* SIDEBAR (BARRA LATERAL - GAVETA) */
+        /* ------------------------------------------- */
+        .sidebar {
+            width: 320px;
+            background-color: #f8f8f8;
+            border-left: 1px solid #eee;
+            flex-shrink: 0; /* Impede que a sidebar diminua */
+            height: 100%;
+            overflow-y: auto;
+            padding-bottom: 30px;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5em;
+            padding: 15px;
+            margin: 0;
+            background-color: #3b82f6;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Botão/Cabeçalho do Nível */
+        .botao-nivel {
+            width: 100%;
+            padding: 15px;
+            background-color: #eee;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1em;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.2s;
+        }
+
+        .botao-nivel:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .botao-nivel.ativo {
+            background-color: #ddd;
+        }
+
+        /* Lista de Aulas (O EFEITO GAVETA/ACORDEÃO) */
+        .lista-aulas {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 0; /* Começa fechada */
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out; /* Suaviza a abertura */
+        }
+
+        .lista-aulas.ativo {
+            max-height: 500px; /* Altura que garante a abertura (pode ser maior se tiver mais aulas) */
+        }
+
+        .lista-aulas li a {
+            display: block;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        
+        .lista-aulas li a:hover {
+            background-color: #e6f7ff;
+            color: #3b82f6;
+        }
+        
+        .lista-aulas li a.aula-selecionada {
+            background-color: #3b82f6;
+            color: #fff;
+            font-weight: bold;
+        }
+
+      /* Adicione este bloco no FINAL da sua tag <style> */
+@media (max-width: 900px) {
+    
+    /* 1. Inverte a Ordem: Sidebar vai para o topo */
+    .container-aula {
+        flex-direction: column; /* Empilha vídeo e sidebar */
+        margin: 0; /* Remove margem lateral em tela pequena */
+        box-shadow: none;
+    }
+    
+    /* 2. Ajusta a Sidebar para 100% da Largura */
+    .sidebar {
+        width: 100%; 
+        /* Remove o posicionamento fixo para rolar junto com o conteúdo */
+        position: static; 
+        height: auto;
+        border-left: none;
+        border-bottom: 1px solid #ccc;
+    }
+    
+    .sidebar h2 {
+        text-align: left; /* Centralizar pode ser estranho no topo */
+    }
+
+    /* 3. Ajusta o Conteúdo Principal */
+    .conteudo-principal {
+        padding: 15px; /* Reduz o padding para ganhar espaço */
+    }
+    
+    .video-player {
+        margin-top: 0;
+    }
+
+    /* 4. Torna o Botão de Nível mais clicável em mobile */
+    .botao-nivel {
+        padding: 18px 15px; 
+    }
+    
+    /* 5. Faz a lista de aulas ocupar a largura total do mobile */
+    .lista-aulas li a {
+        padding-left: 30px; 
+    }
+}
+
+.resultados{
+   display: inline-block; 
+    
+    background-color: #007bff; 
+    
+    text-decoration: none; 
+   
+     padding: 5px 0px; 
+   
+    border-radius: 15px; 
+    color: white;
+    
+    font-size: 16px;
+    font-weight: bold;
+    
+    /* Transição suave ao passar o mouse (efeito bônus!) */
+  
+background-color: #007bff; /* Primeira cor que o navegador lê */
+ background-color: #1079d4; /* SEGUNDA COR: SOBREPOE a primeira cor #007bff */
+   transition: transform 0.3s;
+   width: 19%;
+    
+    /* Centraliza o conteúdo horizontalmente */
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin: 20px auto !important;
+    
+    
+    
+    /* Espaçamento acima e abaixo (opcional) */
+    padding: 5px 0;
+
+}
